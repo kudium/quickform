@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $validToken) {
     if ($result['success']) {
         // Redirect to login or show success
         $baseUrl = web_base_url();
-        header('Location: ' . $baseUrl . 'login?reset=1');
+        header('Location: ' . $baseUrl . 'auth/login?reset=1');
         exit;
     }
 }
