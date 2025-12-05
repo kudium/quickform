@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result['success']) {
         // Redirect to login or show success
         $baseUrl = web_base_url();
-        header('Location: ' . $baseUrl . 'login?registered=1');
+        header('Location: ' . $baseUrl . 'auth/login?registered=1');
         exit;
     }
 }
