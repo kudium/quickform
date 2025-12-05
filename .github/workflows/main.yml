@@ -9,7 +9,6 @@ on:
         description: 'Target server for deployment'
         required: true
         default: 'widgets.top'
-
 jobs:
   web-deploy:
     name: 🎉 Deploy
