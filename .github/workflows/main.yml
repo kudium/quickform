@@ -23,4 +23,3 @@ jobs:
           server: ${{ secrets.FTP_URL }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          # Root password. ?GmgUE#L~wkrVZ%O
