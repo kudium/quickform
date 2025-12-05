@@ -3,6 +3,12 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      server:
+        description: 'Target server for deployment'
+        required: true
+        default: 'widgets.top'
 
 jobs:
   web-deploy:
