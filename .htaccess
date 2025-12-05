@@ -1,0 +1,24 @@
+RewriteEngine On
+
+# Allow direct access to uploaded files under /users if they exist
+RewriteCond %{REQUEST_URI} ^/users/
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+# If the request maps to a real file/dir under /public, serve it (for clean URLs)
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d
+RewriteRule ^(.*)$ public/$1 [L]
+
+# App routes under /public/* (e.g., /public/form, /public/api/submit):
+# If not a real file/dir, route to the front controller
+RewriteCond %{REQUEST_URI} ^/public/
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-d
+RewriteRule ^ public/index.php [QSA,L]
+
+# Otherwise, send everything to the front controller in /public
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^ public/index.php [QSA,L]
