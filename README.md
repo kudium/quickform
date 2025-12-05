@@ -1,6 +1,6 @@
-# Widgets Top — File‑based Forms
+# QuickForm — File‑based Forms
 
-Widgets Top is an open‑source questionnaire and data‑collection tool. It lets you:
+QuickForm is an open‑source questionnaire and data‑collection tool. It lets you:
 
 - Build forms (like Google Forms) with fields arranged vertically.
 - Share a public URL to collect responses from anyone.
